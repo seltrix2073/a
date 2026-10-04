@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Turn — Sejuu</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="reply-page">
+
+    <!-- Background -->
+    <div class="reply-background">
+
+        <div class="reply-glow"></div>
+
+        <div class="reply-stars">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+
+
+    <!-- Main -->
+    <main class="reply-main">
+
+        <p class="reply-label">
+            02 — your turn
+        </p>
+
+
+        <section class="reply-intro">
+
+            <h1>
+                So...
+                <br>
+                <span>what did you think?</span>
+            </h1>
+
+            <p>
+                If you feel like replying, I'd love to hear from you.
+            </p>
+
+            <small>
+                No pressure. Seriously.
+            </small>
+
+        </section>
+
+
+        <!-- Form -->
+        <form
+            class="reply-form"
+            action="https://formspree.io/f/mkjgdgwk"
+            method="POST"
+        >
+
+            <div class="form-group">
+
+                <label for="thoughts">
+                    What did you think of it?
+                </label>
+
+                <textarea
+                    id="thoughts"
+                    name="thoughts"
+                    placeholder="write whatever comes to mind..."
+                    rows="5"
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="message">
+                    Anything you want to say?
+                </label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    placeholder="anything. seriously."
+                    rows="5"
+                ></textarea>
+
+            </div>
+
+
+            <!-- Hidden subject for Formspree -->
+            <input
+                type="hidden"
+                name="_subject"
+                value="Sejuu's Birthday Website Reply"
+            >
+
+
+            <button
+                type="submit"
+                class="send-button"
+            >
+                <span>send it</span>
+                <span class="send-arrow">→</span>
+            </button>
+
+        </form>
+
+
+        <p class="reply-footer">
+            made with a little thought — Duggu
+        </p>
+
+    </main>
+
+
+    <script>
+
+        const form = document.querySelector(".reply-form");
+
+        if (form) {
+
+            form.addEventListener("submit", function () {
+
+                const button =
+                    form.querySelector(".send-button");
+
+                if (button) {
+
+                    button.disabled = true;
+
+                    button.querySelector("span:first-child")
+                        .textContent = "sending...";
+
+                }
+
+            });
+
+        }
+
+    </script>
+
+</body>
+</html>

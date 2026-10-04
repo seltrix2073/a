@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday, Sejuu</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="birthday-page">
+
+    <!-- Background -->
+    <div class="birthday-background">
+
+        <div class="birthday-glow"></div>
+
+        <div class="birthday-particles">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+
+
+    <!-- Main Content -->
+    <main class="birthday-main">
+
+        <p class="birthday-small">
+            01 — today is yours
+        </p>
+
+
+        <!-- Combined Line Art -->
+        <div class="lineart-wrapper">
+
+            <img
+                src="assets/images/a.png"
+                alt="Sejuu and Duggu"
+                class="lineart"
+            >
+
+        </div>
+
+
+        <!-- Birthday Heading -->
+        <section class="birthday-text">
+
+            <p class="birthday-label">
+                a little something
+            </p>
+
+            <h1>
+                Happy Birthday,<br>
+                <span>Sejuu.</span>
+            </h1>
+
+            <p class="birthday-subtitle">
+                I could've just wished you happy birthday...
+                but that felt a little too ordinary.
+            </p>
+
+        </section>
+
+
+        <!-- Personal Message -->
+        <section class="personal-message">
+
+            <p>
+                So I made this instead.
+            </p>
+
+            <p>
+                I hope this little corner of the internet
+                gives you at least one reason to smile today.
+            </p>
+
+            <p>
+                Happy Birthday! I built this because a normal message didn't feel big enough
+                 for someone who messes with my focus as much as you do
+                . But seriously... out of all the people, I'm so glad it's you. 
+                I just wish this connection we have lasts forever
+
+            </p>
+            <p>
+                note - nothing in this website is made by AI
+            </p>
+
+            <div class="message-line"></div>
+
+            <p class="message-signature">
+                — Duggu
+            </p>
+
+        </section>
+
+
+        <!-- Continue -->
+       <button class="next-button" id="birthdayNext" type="button">
+    <span>your turn</span>
+    <span class="next-arrow">→</span>
+</button>
+
+    </main>
+
+
+    <!-- Transition -->
+    <div
+        class="transition"
+        id="birthdayTransition">
+    </div>
+
+
+    <script>
+
+        const nextButton =
+            document.getElementById("birthdayNext");
+
+        const birthdayTransition =
+            document.getElementById("birthdayTransition");
+
+
+        if (nextButton && birthdayTransition) {
+
+            nextButton.addEventListener("click", function () {
+
+                nextButton.disabled = true;
+
+                birthdayTransition.classList.add("active");
+
+                setTimeout(function () {
+
+                    window.location.href = "reply.html";
+
+                }, 850);
+
+            });
+
+        }
+
+
+        window.addEventListener("pageshow", function (event) {
+
+            if (
+                event.persisted &&
+                birthdayTransition
+            ) {
+
+                birthdayTransition.classList.remove("active");
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
